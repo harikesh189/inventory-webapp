@@ -17,8 +17,7 @@ import org.springframework.security.core.SpringSecurityCoreVersion;
 import org.springframework.util.Assert;
 
 @Entity(name="Users")
-public class User extends AbstractBaseDomain implements Serializable
-{
+public class User extends AbstractBaseDomain {
 	private static final long serialVersionUID = SpringSecurityCoreVersion.SERIAL_VERSION_UID;
 
     //~ Instance fields ================================================================================================

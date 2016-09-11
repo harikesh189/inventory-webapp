@@ -35,7 +35,6 @@ public class LoadInitialDBService {
 		user.setCredentialsNonExpired(true);
 		user.getAuthorities().add(adminAuthority);
 		adminAuthority.getUsers().add(user);
-		ArrayList listOfObjects = new ArrayList();
 		baseDao.persist(user);
 		baseDao.persist(adminAuthority);
 		baseDao.persist(userAuthority);

@@ -9,8 +9,8 @@ import javax.persistence.ManyToMany;
 import org.springframework.security.core.GrantedAuthority;
 
 @Entity
-public class Authority extends AbstractBaseDomain implements GrantedAuthority
-{
+public class Authority extends AbstractBaseDomain implements GrantedAuthority {
+	
 	private static final long serialVersionUID = 1234567L;
 
 	private String authority;

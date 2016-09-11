@@ -1,19 +1,21 @@
 package com.fab.inventory.domain;
 
+import java.io.Serializable;
+import java.util.Date;
 import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.PreUpdate;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
-/**
- * This class is based on below blog link :
- * http://www.onjava.com/pub/a/onjava/2006/09/13/dont-let-hibernate-steal-your-identity.html
- * 
- *
- */
 @MappedSuperclass
-public class AbstractBaseDomain implements BaseDomain {
+public class AbstractBaseDomain implements BaseDomain, Serializable {
+
+	private static final long serialVersionUID = 98457373648389287L;
 
 	@Id
 	private String id = IdGenerator.createId();
@@ -21,14 +23,55 @@ public class AbstractBaseDomain implements BaseDomain {
 	@Version
 	private Integer version;
 
+	@Column(name = "created_by")
+	private String createdBy;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "created_date", updatable = false)
+	private Date createdDate = new Date();
+
+	@Column(name = "updated_by")
+	private String updatedBy;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "updated_date")
+	private Date updatedDate = new Date();
+
+	@PreUpdate
+	public void setLastUpdate() {
+		this.updatedDate = new Date();
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
 	public String getId() {
 		return this.id;
 	}
 
 	public void setId(String id) {
-		// this.id = id;
-		// As id is used for key in collection of objects, it must be immutable.
-		throw new RuntimeException("Invalid operation, id field is immutable");
+		this.id = id;
 	}
 
 	public Integer getVersion() {

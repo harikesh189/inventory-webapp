@@ -57,14 +57,9 @@
 </script>
 
  
-	<h1>Spring Security Custom Login Form (Annotation)</h1>
+	<h1>Hotel Inventory Login Page</h1>
 	
-	<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
+	
  
 	<div id="login-box">
  
