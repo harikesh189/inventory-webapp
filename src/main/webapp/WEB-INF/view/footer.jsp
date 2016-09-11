@@ -43,9 +43,7 @@ article {
 
 <div class="container">
 
-<header>
-   <h1>Hotel Inventory Portal</h1>
-</header>
+<footer>Copyright © fab.inventory.com</footer>
 
 </div>
 

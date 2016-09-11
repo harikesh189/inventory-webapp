@@ -10,23 +10,26 @@
 <script src="<c:url value="/resources/jquery-2.1.1.min.js" />"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
 <title><tiles:insertAttribute name="title" ignore="true" />  
-</title>  
+</title>
+
+<style type ="text/css" >
+   .footerPart{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 0px; 
+       width: 100%;
+   }  
+</style>
+  
 </head>  
 <body>  
-    <table border="1" cellspacing="2" align="center">  
-        <tr>  
-            <td height="30" colspan="2"><tiles:insertAttribute name="header" />  
-            </td>  
-        </tr>  
-        <tr>  
-            
-            <td width="400"><tiles:insertAttribute name="body" />  
-            </td>  
-        </tr>  
-        <tr>  
-            <td height="30" colspan="2"><tiles:insertAttribute name="footer" />  
-            </td>  
-        </tr>  
-    </table>  
+
+<tiles:insertAttribute name="header" /> 
+<tiles:insertAttribute name="body" />
+<div class="footerPart">
+	<tiles:insertAttribute name="footer" />
+</div>
+
+   
 </body>  
 </html>  

@@ -20,9 +20,4 @@ public class DashboardController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/header", method = RequestMethod.GET)
-	public String header(Model model) {
-		return "header";
-	}
-
 }

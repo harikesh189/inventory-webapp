@@ -11,9 +11,5 @@
 		hello this is index page for fab inventory
 		
 		
-		Below is just a loop iteration<br/>
-		
-		
-		
 	</body>
 </html>
