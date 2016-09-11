@@ -20,7 +20,7 @@ public class HotelRoom extends AbstractBaseDomain {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "customer_id")
-	Customer customerDetail;
+	User customerDetail;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "hotel_id")
@@ -46,11 +46,11 @@ public class HotelRoom extends AbstractBaseDomain {
 		this.roomId = roomId;
 	}
 
-	public Customer getCustomerDetail() {
+	public User getCustomerDetail() {
 		return customerDetail;
 	}
 
-	public void setCustomerDetail(Customer customerDetail) {
+	public void setCustomerDetail(User customerDetail) {
 		this.customerDetail = customerDetail;
 	}
 

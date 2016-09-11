@@ -26,6 +26,6 @@ public class BootStrap implements ApplicationListener<ContextRefreshedEvent> {
 
 	private void bootApplicationData() {
 		logger.debug("initializing data at loading time");
-		loadInitialDBService.loadAdminUser();
+		loadInitialDBService.loadInitialData();
 	}
 }
